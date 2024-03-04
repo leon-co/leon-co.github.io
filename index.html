@@ -2,29 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Google Sheets to Table</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-        }
-        .nav-arrows {
-            margin-top: 10px;
-        }
+    <title>Leon's Pokemon Cards</title>
+	<style>
 		body {
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
 			align-items: center;
+			background-color: #FFF9C4; /* Light yellow background */
 		}
-
-		.nav-arrows, #linesToShow, button {
+		table {
+			background-color: #BBDEFB; /* Light blue background */
+			border-radius: 10px; /* Rounded corners for the table */
+			overflow: hidden; /* Ensures the rounded corners affect inner elements */
+		}
+		th, td {
+			border: 1px solid #90CAF9; /* Lighter blue border for table cells */
+			padding: 10px;
+		}
+		th {
+			background-color: #083a6d; /* Dark blue background */
+			color: white; /* White font color */
+			border: 1px solid #1b3047; /* Slightly darker blue border for distinction */
+		}
+		tr:nth-child(odd) {
+			background-color: #E3F2FD; /* Lighter shade of blue for odd rows */
+		}
+		.nav-arrows button, #linesToShow {
+			background-color: #FFCCBC; /* Light orange background for buttons and dropdown */
+			border: none;
+			padding: 10px 20px;
+			margin: 5px;
+			border-radius: 5px; /* Rounded corners for buttons and dropdown */
+			cursor: pointer;
+		}
+		.nav-arrows button:hover, #linesToShow:hover {
+			background-color: #FFAB91; /* Darker shade on hover */
+		}
+		.nav-arrows, #linesToShow {
 			margin: 10px;
 		}
-    </style>
+	</style>
+
+
+
 </head>
 <body>
 
@@ -34,7 +55,6 @@
     <option value="50">50</option>
 </select>
 
-<button onclick="loadDataFromGoogleSheets()">Load Data from Google Sheets</button>
 <br><br>
 <table id="csvRoot"></table>
 <div class="nav-arrows">

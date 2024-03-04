@@ -70,6 +70,7 @@ function displayPage() {
     document.getElementById('csvRoot').appendChild(table);
 }
 
+
 function sortColumn(columnIndex) {
     if (columnIndex === currentSortColumn) {
         sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
@@ -108,3 +109,7 @@ function navigate(direction) {
     if (currentPage > totalPages) currentPage = totalPages;
     displayPage();
 }
+
+window.onload = function() {
+    loadDataFromGoogleSheets();
+};
