@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Sheets to Table</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+        .nav-arrows {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<select id="linesToShow">
+    <option value="10">10</option>
+    <option value="25">25</option>
+    <option value="50">50</option>
+</select>
+
+<button onclick="loadDataFromGoogleSheets()">Load Data from Google Sheets</button>
+<br><br>
+<table id="csvRoot"></table>
+<div class="nav-arrows">
+    <button onclick="navigate(-1)">&#8592; Prev</button>
+    <button onclick="navigate(1)">Next &#8594;</button>
+</div>
+
+<script src="csvToTable.js"></script>
+</body>
+</html>
