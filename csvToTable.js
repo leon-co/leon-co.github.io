@@ -30,6 +30,11 @@ function displayPage() {
     const headerRow = document.createElement('tr');
     const columnsToHide = ['Link', 'Timestamp']; // Names of the columns to hide
 
+    // Add static header for the numbered column at the beginning
+    const staticNumberHeader = document.createElement('th');
+    staticNumberHeader.textContent = "#";
+    headerRow.appendChild(staticNumberHeader);
+
     // Function to check if a column should be hidden
     const shouldHideColumn = (header) => columnsToHide.includes(header);
 
@@ -54,8 +59,14 @@ function displayPage() {
 
     const startIndex = (currentPage - 1) * linesPerPage;
     const endIndex = startIndex + linesPerPage;
-    csvArray.slice(startIndex, endIndex).forEach(row => {
+    csvArray.slice(startIndex, endIndex).forEach((row, rowIndex) => {
         const rowElement = document.createElement('tr');
+
+        // Add a static number cell at the beginning of each row
+        const numberCell = document.createElement('td');
+        numberCell.textContent = startIndex + rowIndex + 1; // Calculate row number
+        rowElement.appendChild(numberCell);
+
         row.forEach((cell, index) => {
             if (!indexesToHide.includes(index)) { // Only add cell if its column is not to be hidden
                 const cellElement = document.createElement('td');
@@ -69,6 +80,7 @@ function displayPage() {
     document.getElementById('csvRoot').innerHTML = '';
     document.getElementById('csvRoot').appendChild(table);
 }
+
 
 
 function sortColumn(columnIndex) {

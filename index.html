@@ -3,50 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Leon's Pokemon Cards</title>
-	<style>
+    <!-- Updated link for Pridi font with Medium (500) for headers and Light (300) for other text -->
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@300;500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport tag -->
+    <style>
 		body {
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
 			align-items: center;
 			background-color: #FFF9C4; /* Light yellow background */
+			font-family: 'Pridi', serif; /* Apply Pridi font */
+			font-weight: 300; /* Light style for general text */
+			margin: 0;
+			padding: 20px;
 		}
+
 		table {
-			background-color: #BBDEFB; /* Light blue background */
+			border-collapse: collapse;
+			width: 100%;
+			max-width: 600px; /* Maximum table width */
+			margin-top: 20px;
 			border-radius: 10px; /* Rounded corners for the table */
-			overflow: hidden; /* Ensures the rounded corners affect inner elements */
+			overflow: hidden; /* Ensures the border radius affects inner elements */
 		}
+
 		th, td {
-			border: 1px solid #90CAF9; /* Lighter blue border for table cells */
+			border: 1px solid #90CAF9; /* Border color */
 			padding: 10px;
+			background-color: #BBDEFB; /* Light blue background applied directly to cells */
 		}
+
 		th {
-			background-color: #083a6d; /* Dark blue background */
-			color: white; /* White font color */
-			border: 1px solid #1b3047; /* Slightly darker blue border for distinction */
+			background-color: #0D47A1; /* Dark blue background for headers */
+			color: white; /* White text color */
+			font-weight: 500; /* Medium style for headers */
 		}
+
 		tr:nth-child(odd) {
 			background-color: #E3F2FD; /* Lighter shade of blue for odd rows */
 		}
+
 		.nav-arrows button, #linesToShow {
-			background-color: #FFCCBC; /* Light orange background for buttons and dropdown */
+			background-color: #FFCCBC; /* Background color for buttons and dropdown */
 			border: none;
 			padding: 10px 20px;
 			margin: 5px;
 			border-radius: 5px; /* Rounded corners for buttons and dropdown */
 			cursor: pointer;
+			font-weight: 300; /* Light style for button text */
+			font-family: 'Pridi', serif; /* Ensure Pridi font is applied */
 		}
+
 		.nav-arrows button:hover, #linesToShow:hover {
 			background-color: #FFAB91; /* Darker shade on hover */
 		}
+
 		.nav-arrows, #linesToShow {
 			margin: 10px;
 		}
-	</style>
 
+		/* Responsive scaling */
+		@media (max-width: 768px) {
+			html {
+				font-size: 110%; /* Adjust font size for medium screens */
+			}
+		}
 
-
+		@media (max-width: 480px) {
+			html {
+				font-size: 120%; /* Adjust font size for small screens */
+			}
+		}
+    </style>
 </head>
+
 <body>
 
 <select id="linesToShow">
